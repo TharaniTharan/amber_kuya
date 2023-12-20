@@ -41,9 +41,8 @@ project.afterEvaluate {
         publications {
             libraryProject(MavenPublication) {
                 groupId 'com.android'
-                artifactId 'myAmber'
+                artifactId 'lib_kuya'
                 version '1.0'
-                artifact bundleReleaseAar
                 artifact "$buildDir/outputs/aar/myAmber-debug.aar"
 
 
@@ -63,19 +62,19 @@ project.afterEvaluate {
                 }*/
             }
         }
-    }
-}
 
-/*repositories {
-    maven {
-        name "GitHubPackages"
-        url uri("https://maven.pkg.github.com/TharaniTharan/myAmber")
-        credentials {
-            username = System.getenv("TharaniTharan")
-            password = System.getenv("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")
+        repositories {
+            maven {
+                name "GitHubPackages"
+                url uri("https://maven.pkg.github.com/TharaniTharan/amber_kuya")
+                credentials {
+                    username = project.storedUsername
+                    password = project.storedPassword
+                }
+            }
         }
     }
-}*/
+}
 
 
 dependencies {
